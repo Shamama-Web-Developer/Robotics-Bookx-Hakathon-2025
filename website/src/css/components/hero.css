@@ -1,0 +1,160 @@
+/**
+ * Hero Section Styles
+ * Feature: 005-docusaurus-ui-enhancement
+ */
+
+/* Hero banner with gradient background */
+.hero {
+  background: linear-gradient(135deg, var(--ifm-color-primary) 0%, var(--ifm-color-primary-light) 100%);
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--primary {
+  --ifm-hero-background-color: transparent;
+  --ifm-hero-text-color: #ffffff;
+}
+
+.hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons */
+.hero .button {
+  margin: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--ifm-button-border-radius);
+  transition: all 0.3s ease;
+}
+
+.hero .button--secondary {
+  background-color: #ffffff;
+  color: var(--ifm-color-primary);
+  border: 2px solid #ffffff;
+}
+
+.hero .button--secondary:hover {
+  background-color: transparent;
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.hero .button--outline {
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.hero .button--outline:hover {
+  background-color: #ffffff;
+  color: var(--ifm-color-primary);
+}
+
+/* Decorative elements */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .hero {
+  background: linear-gradient(135deg, var(--ifm-background-surface-color) 0%, var(--ifm-color-primary-dark) 100%);
+}
+
+[data-theme='dark'] .hero__title {
+  color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .hero__subtitle {
+  color: var(--ifm-font-color-secondary);
+}
+
+[data-theme='dark'] .hero .button--secondary {
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .hero .button--secondary:hover {
+  background-color: var(--ifm-color-primary-light);
+  border-color: var(--ifm-color-primary-light);
+}
+
+/* ============================================================
+   RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet (768px - 1024px) */
+@media screen and (max-width: 1024px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile (< 768px) */
+@media screen and (max-width: 768px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .hero .button {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 0.5rem auto;
+  }
+}
+
+/* Small mobile (< 480px) */
+@media screen and (max-width: 480px) {
+  .hero__title {
+    font-size: 1.75rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}

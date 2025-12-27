@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(sp.specify)",
+      "Bash(git fetch:*)",
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)",
+      "Skill(sp.plan)",
+      "Skill(sp.implement)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(if [ -d \"website\" ])",
+      "Bash(then ls -la website/)",
+      "Bash(fi)",
+      "Bash(git push:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git init:*)"
+    ]
+  }
+}

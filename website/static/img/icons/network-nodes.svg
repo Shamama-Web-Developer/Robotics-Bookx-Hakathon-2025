@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="ROS 2 Network Nodes">
+  <title>ROS 2 Network Nodes</title>
+  <!-- Central node -->
+  <circle cx="32" cy="32" r="8" fill="#1a365d" stroke="#3182ce" stroke-width="2"/>
+
+  <!-- Top node -->
+  <circle cx="32" cy="12" r="6" fill="#3182ce"/>
+  <line x1="32" y1="18" x2="32" y2="24" stroke="#3182ce" stroke-width="2"/>
+
+  <!-- Right node -->
+  <circle cx="52" cy="32" r="6" fill="#3182ce"/>
+  <line x1="46" y1="32" x2="40" y2="32" stroke="#3182ce" stroke-width="2"/>
+
+  <!-- Bottom node -->
+  <circle cx="32" cy="52" r="6" fill="#3182ce"/>
+  <line x1="32" y1="46" x2="32" y2="40" stroke="#3182ce" stroke-width="2"/>
+
+  <!-- Left node -->
+  <circle cx="12" cy="32" r="6" fill="#3182ce"/>
+  <line x1="18" y1="32" x2="24" y2="32" stroke="#3182ce" stroke-width="2"/>
+
+  <!-- Diagonal connections -->
+  <line x1="38" y1="26" x2="46" y2="18" stroke="#3182ce" stroke-width="1.5" opacity="0.5"/>
+  <line x1="38" y1="38" x2="46" y2="46" stroke="#3182ce" stroke-width="1.5" opacity="0.5"/>
+  <line x1="26" y1="38" x2="18" y2="46" stroke="#3182ce" stroke-width="1.5" opacity="0.5"/>
+  <line x1="26" y1="26" x2="18" y2="18" stroke="#3182ce" stroke-width="1.5" opacity="0.5"/>
+
+  <!-- Corner nodes -->
+  <circle cx="50" cy="14" r="4" fill="#00d4ff" opacity="0.7"/>
+  <circle cx="50" cy="50" r="4" fill="#00d4ff" opacity="0.7"/>
+  <circle cx="14" cy="50" r="4" fill="#00d4ff" opacity="0.7"/>
+  <circle cx="14" cy="14" r="4" fill="#00d4ff" opacity="0.7"/>
+</svg>

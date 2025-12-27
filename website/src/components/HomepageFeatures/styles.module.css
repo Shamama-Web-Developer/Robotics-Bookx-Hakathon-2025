@@ -1,0 +1,135 @@
+/**
+ * Homepage Features Styles
+ * Feature: 005-docusaurus-ui-enhancement
+ */
+
+.features {
+  padding: var(--spacing-2xl) 0;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.featuresHeader {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.featuresHeader h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--ifm-font-color-base);
+}
+
+.featuresHeader p {
+  font-size: 1.1rem;
+  color: var(--ifm-font-color-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.featureCol {
+  margin-bottom: var(--spacing-lg);
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: var(--spacing-lg);
+  background-color: var(--ifm-background-color);
+  border-radius: var(--ifm-card-border-radius);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  border-color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+[data-theme='dark'] .featureCard:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.featureIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: var(--spacing-md);
+  background-color: var(--ifm-background-surface-color);
+  border-radius: var(--ifm-global-radius);
+}
+
+.featureIcon img {
+  width: 48px;
+  height: 48px;
+}
+
+.featureContent {
+  flex: 1;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--ifm-font-color-base);
+}
+
+.featureCard:hover .featureTitle {
+  color: var(--ifm-color-primary);
+}
+
+.featureDescription {
+  font-size: 0.95rem;
+  color: var(--ifm-font-color-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.featureArrow {
+  margin-top: var(--spacing-md);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.featureCard:hover .featureArrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Responsive Grid */
+@media screen and (max-width: 996px) {
+  .features {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .featureCol {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .featureCol {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+
+  .featureCard {
+    padding: var(--spacing-md);
+  }
+
+  .featureArrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+
+# Production builds
+build/
+dist/
+public/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.x
+# Editor-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Docusaurus-specific
+.docusaurus/
+.cache/
+
+# Testing
+coverage/
+junit.xml
+
+# Temporary files
+*.tmp
+*.bak
+*.orig
+
+# Browser extensions
+chrome-extension/
+
+# IDE
+*.sublime-project
+*.sublime-workspace
+nbproject/
+*.tmproj
+
+# Runtime
+.happypack/
+.nyc_output/
+.pytest_cache/
+
+# Package manager lock files
+pnpm-lock.yaml
+yarn.lock
+
+# Sensitive files (security)
+secrets/
+credentials.json
+private.key
+id_rsa
+config/secrets.yml

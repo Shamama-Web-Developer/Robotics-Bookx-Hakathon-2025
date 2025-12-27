@@ -1,0 +1,251 @@
+# Component Structure Contract
+# Feature: 005-docusaurus-ui-enhancement
+# Date: 2025-12-23
+#
+# This contract defines the expected structure and props for
+# customized React components.
+
+schema_version: "1.0"
+contract_type: component_structure
+
+# ============================================================
+# Homepage Feature Card Component
+# ============================================================
+HomepageFeatures:
+  file: website/src/components/HomepageFeatures/index.tsx
+  description: Displays feature cards on the homepage
+
+  props:
+    FeatureItem:
+      title:
+        type: string
+        required: true
+        description: Feature card title
+        example: "ROS 2 Foundations"
+
+      description:
+        type: ReactNode
+        required: true
+        description: Feature description text or JSX
+
+      icon:
+        type: string
+        required: true
+        description: Icon identifier or SVG path
+        example: "network-nodes"
+
+      link:
+        type: string
+        required: false
+        description: Link to related documentation
+        example: "/docs/module1/intro"
+
+      badge:
+        type: string
+        required: false
+        description: Optional badge text
+        example: "New"
+
+  feature_list:
+    - id: ros2-foundations
+      title: "ROS 2 Foundations"
+      description: "Master the robotic nervous system with nodes, topics, services, and actions"
+      icon: "network-nodes"
+      link: "/docs/module1/intro"
+
+    - id: digital-twin
+      title: "Digital Twin Simulation"
+      description: "Build realistic physics simulations with Isaac Sim and Omniverse"
+      icon: "simulation-3d"
+      link: "/docs/digital-twin-robotics/physics-simulation"
+
+    - id: ai-robotics
+      title: "Isaac Robotic Brain"
+      description: "Implement perception, navigation, and SLAM for autonomous robots"
+      icon: "neural-brain"
+      link: "/docs/isaac-robotic-brain/quickstart-guide"
+
+    - id: vla-systems
+      title: "Vision-Language-Action"
+      description: "Connect voice commands to robot actions through LLM-powered planning"
+      icon: "voice-action"
+      link: "/docs/vla-humanoid-robotics/intro"
+
+  styling:
+    container_class: "features"
+    card_class: "feature-card"
+    grid_layout: "auto-fit, minmax(280px, 1fr)"
+    card_hover: "translateY(-4px) with shadow"
+
+# ============================================================
+# Homepage Hero Component
+# ============================================================
+HomepageHero:
+  file: website/src/pages/index.tsx
+  description: Hero banner on the homepage
+
+  content:
+    title: "Physical AI & Humanoid Robotics"
+    tagline: "A comprehensive guide to ROS 2-based humanoid robot control"
+    cta_primary:
+      text: "Start Learning"
+      link: "/docs/intro"
+    cta_secondary:
+      text: "View on GitHub"
+      link: "https://github.com/your-username/REBOTIC-BOOK-HAKATHON"
+
+  styling:
+    background: "gradient from primary-dark to primary"
+    min_height: "400px"
+    text_color: "white"
+    cta_style: "rounded buttons with hover effects"
+
+# ============================================================
+# Custom Navbar Items
+# ============================================================
+Navbar:
+  file: website/docusaurus.config.ts
+  description: Top navigation configuration
+
+  items:
+    left:
+      - label: "Modules"
+        type: "docSidebar"
+        sidebarId: "tutorialSidebar"
+        position: "left"
+
+      - label: "Blog"
+        to: "/blog"
+        position: "left"
+
+    right:
+      - label: "GitHub"
+        href: "https://github.com/your-username/REBOTIC-BOOK-HAKATHON"
+        position: "right"
+        className: "navbar-github-link"
+
+  styling:
+    logo_size: "32px"
+    link_hover: "underline with primary color"
+    mobile_menu: "hamburger icon at 996px breakpoint"
+
+# ============================================================
+# Custom Footer Structure
+# ============================================================
+Footer:
+  file: website/docusaurus.config.ts
+  description: Footer links and content
+
+  columns:
+    - title: "Modules"
+      items:
+        - label: "Module 1 - ROS 2"
+          to: "/docs/module1/intro"
+        - label: "Module 2 - Digital Twin"
+          to: "/docs/digital-twin-robotics/physics-simulation"
+        - label: "Module 3 - Isaac Brain"
+          to: "/docs/isaac-robotic-brain/quickstart-guide"
+        - label: "Module 4 - VLA"
+          to: "/docs/vla-humanoid-robotics/intro"
+
+    - title: "Community"
+      items:
+        - label: "ROS Discourse"
+          href: "https://discourse.ros.org/"
+        - label: "Robotics Stack Exchange"
+          href: "https://robotics.stackexchange.com/"
+        - label: "NVIDIA Forums"
+          href: "https://forums.developer.nvidia.com/"
+
+    - title: "Resources"
+      items:
+        - label: "GitHub"
+          href: "https://github.com/your-username/REBOTIC-BOOK-HAKATHON"
+        - label: "ROS 2 Documentation"
+          href: "https://docs.ros.org/en/jazzy/"
+        - label: "Isaac Sim Docs"
+          href: "https://developer.nvidia.com/isaac-sim"
+
+  copyright: "Copyright {year} Physical AI & Humanoid Robotics. Built with Docusaurus."
+
+  styling:
+    background: "dark (--ifm-footer-background-color)"
+    link_color: "light text with hover highlight"
+    column_gap: "2rem"
+
+# ============================================================
+# Sidebar Configuration
+# ============================================================
+Sidebar:
+  file: website/sidebars.ts
+  description: Documentation sidebar structure
+
+  styling:
+    active_item:
+      background: "var(--ifm-menu-color-background-active)"
+      border_left: "3px solid var(--ifm-color-primary)"
+      font_weight: "600"
+
+    category_icon:
+      collapsed: "chevron-right"
+      expanded: "chevron-down"
+
+    hover_state:
+      background: "rgba(0, 0, 0, 0.05)"
+      transition: "background 0.2s ease"
+
+# ============================================================
+# Code Block Styling
+# ============================================================
+CodeBlock:
+  description: Syntax-highlighted code blocks
+
+  styling:
+    background_light: "#f8fafc"
+    background_dark: "#1e293b"
+    border_radius: "8px"
+    padding: "1rem"
+    font_family: "var(--ifm-font-family-monospace)"
+    line_numbers: "optional, subtle gray"
+    copy_button: "top-right, appears on hover"
+
+  syntax_themes:
+    light: "github"
+    dark: "dracula"
+
+# ============================================================
+# Admonition Styling
+# ============================================================
+Admonitions:
+  description: Callout boxes (note, tip, warning, danger, info)
+
+  types:
+    note:
+      icon: "info-circle"
+      border_color: "#3b82f6"
+      background: "rgba(59, 130, 246, 0.1)"
+
+    tip:
+      icon: "lightbulb"
+      border_color: "#10b981"
+      background: "rgba(16, 185, 129, 0.1)"
+
+    warning:
+      icon: "exclamation-triangle"
+      border_color: "#f59e0b"
+      background: "rgba(245, 158, 11, 0.1)"
+
+    danger:
+      icon: "exclamation-circle"
+      border_color: "#ef4444"
+      background: "rgba(239, 68, 68, 0.1)"
+
+    info:
+      icon: "info"
+      border_color: "#3182ce"
+      background: "rgba(49, 130, 206, 0.1)"
+
+  styling:
+    border_left_width: "4px"
+    border_radius: "0 8px 8px 0"
+    padding: "1rem 1.5rem"

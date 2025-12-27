@@ -1,0 +1,187 @@
+# Theme CSS Variables Contract
+# Feature: 005-docusaurus-ui-enhancement
+# Date: 2025-12-23
+#
+# This contract defines all CSS custom properties that will be set
+# in the custom.css file to override Docusaurus/Infima defaults.
+
+schema_version: "1.0"
+contract_type: css_variables
+target_file: website/src/css/custom.css
+
+# ============================================================
+# Light Mode Variables (default)
+# ============================================================
+light_mode:
+  # Primary Colors
+  --ifm-color-primary: "#1a365d"
+  --ifm-color-primary-dark: "#0d1b2a"
+  --ifm-color-primary-darker: "#0a1520"
+  --ifm-color-primary-darkest: "#050a10"
+  --ifm-color-primary-light: "#3182ce"
+  --ifm-color-primary-lighter: "#4299e1"
+  --ifm-color-primary-lightest: "#63b3ed"
+
+  # Accent Color (for highlights)
+  --ifm-color-accent: "#00d4ff"
+
+  # Background Colors
+  --ifm-background-color: "#ffffff"
+  --ifm-background-surface-color: "#f8fafc"
+
+  # Text Colors
+  --ifm-font-color-base: "#1e293b"
+  --ifm-font-color-secondary: "#4a5568"
+
+  # Link Colors
+  --ifm-link-color: "#3182ce"
+  --ifm-link-hover-color: "#1a365d"
+
+  # Border Colors
+  --ifm-color-emphasis-200: "#e2e8f0"
+  --ifm-color-emphasis-300: "#cbd5e1"
+
+  # Code Block
+  --ifm-code-font-size: "95%"
+  --docusaurus-highlighted-code-line-bg: "rgba(26, 54, 93, 0.1)"
+
+  # Navbar
+  --ifm-navbar-background-color: "#ffffff"
+  --ifm-navbar-shadow: "0 1px 2px 0 rgba(0, 0, 0, 0.05)"
+
+  # Sidebar
+  --doc-sidebar-width: "280px"
+  --ifm-menu-color-background-active: "rgba(26, 54, 93, 0.1)"
+
+  # Footer
+  --ifm-footer-background-color: "#1e293b"
+  --ifm-footer-color: "#f1f5f9"
+
+# ============================================================
+# Dark Mode Variables
+# ============================================================
+dark_mode:
+  selector: "[data-theme='dark']"
+
+  # Primary Colors
+  --ifm-color-primary: "#22d3ee"
+  --ifm-color-primary-dark: "#0891b2"
+  --ifm-color-primary-darker: "#0e7490"
+  --ifm-color-primary-darkest: "#155e75"
+  --ifm-color-primary-light: "#67e8f9"
+  --ifm-color-primary-lighter: "#a5f3fc"
+  --ifm-color-primary-lightest: "#cffafe"
+
+  # Accent Color
+  --ifm-color-accent: "#00d4ff"
+
+  # Background Colors
+  --ifm-background-color: "#0f172a"
+  --ifm-background-surface-color: "#1e293b"
+
+  # Text Colors
+  --ifm-font-color-base: "#f1f5f9"
+  --ifm-font-color-secondary: "#94a3b8"
+
+  # Link Colors
+  --ifm-link-color: "#22d3ee"
+  --ifm-link-hover-color: "#67e8f9"
+
+  # Border Colors
+  --ifm-color-emphasis-200: "#334155"
+  --ifm-color-emphasis-300: "#475569"
+
+  # Code Block
+  --docusaurus-highlighted-code-line-bg: "rgba(34, 211, 238, 0.2)"
+
+  # Navbar
+  --ifm-navbar-background-color: "#1e293b"
+
+  # Sidebar
+  --ifm-menu-color-background-active: "rgba(34, 211, 238, 0.15)"
+
+  # Footer
+  --ifm-footer-background-color: "#0f172a"
+  --ifm-footer-color: "#f1f5f9"
+
+# ============================================================
+# Typography Variables (both modes)
+# ============================================================
+typography:
+  --ifm-font-family-base: >-
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif
+  --ifm-font-family-monospace: >-
+    'JetBrains Mono', 'Fira Code', 'Consolas', 'Monaco', monospace
+  --ifm-font-size-base: "16px"
+  --ifm-line-height-base: "1.7"
+  --ifm-heading-font-weight: "600"
+  --ifm-h1-font-size: "2.5rem"
+  --ifm-h2-font-size: "2rem"
+  --ifm-h3-font-size: "1.5rem"
+  --ifm-h4-font-size: "1.25rem"
+  --ifm-h5-font-size: "1rem"
+
+# ============================================================
+# Layout Variables (both modes)
+# ============================================================
+layout:
+  --ifm-container-width: "1400px"
+  --ifm-container-width-xl: "1400px"
+  --ifm-global-radius: "8px"
+  --ifm-global-spacing: "1rem"
+  --ifm-spacing-vertical: "1rem"
+  --ifm-spacing-horizontal: "1rem"
+
+# ============================================================
+# Component-Specific Variables
+# ============================================================
+components:
+  navbar:
+    --ifm-navbar-height: "60px"
+    --ifm-navbar-padding-vertical: "0.5rem"
+    --ifm-navbar-padding-horizontal: "1rem"
+    --ifm-navbar-link-hover-color: "var(--ifm-color-primary)"
+
+  sidebar:
+    --ifm-menu-link-padding-vertical: "0.5rem"
+    --ifm-menu-link-padding-horizontal: "0.75rem"
+
+  code_block:
+    --ifm-pre-padding: "1rem"
+    --ifm-pre-border-radius: "8px"
+
+  buttons:
+    --ifm-button-border-radius: "6px"
+    --ifm-button-padding-vertical: "0.5rem"
+    --ifm-button-padding-horizontal: "1rem"
+
+  cards:
+    --ifm-card-border-radius: "12px"
+    --ifm-card-padding: "1.5rem"
+
+# ============================================================
+# Accessibility Variables
+# ============================================================
+accessibility:
+  --focus-outline-width: "3px"
+  --focus-outline-offset: "2px"
+  --focus-outline-color: "var(--ifm-color-primary)"
+
+# ============================================================
+# Validation Rules
+# ============================================================
+validation:
+  contrast_requirements:
+    - pair: [--ifm-font-color-base, --ifm-background-color]
+      min_ratio: 4.5
+      mode: light
+    - pair: [--ifm-font-color-base, --ifm-background-color]
+      min_ratio: 4.5
+      mode: dark
+    - pair: [--ifm-font-color-secondary, --ifm-background-color]
+      min_ratio: 3.0
+      mode: light
+    - pair: [--ifm-font-color-secondary, --ifm-background-color]
+      min_ratio: 3.0
+      mode: dark

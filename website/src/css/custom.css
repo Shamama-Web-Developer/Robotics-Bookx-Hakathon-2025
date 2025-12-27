@@ -1,0 +1,249 @@
+/**
+ * Physical AI & Humanoid Robotics - Custom Theme
+ * Baby Pink color palette - Feminine touch with modern aesthetics
+ * Created with love by our amazing female college team
+ */
+
+/* ============================================================
+   LIGHT MODE - Baby Pink Theme
+   ============================================================ */
+:root {
+  /* Primary Colors - Baby Pink */
+  --ifm-color-primary: #e91e8c;
+  --ifm-color-primary-dark: #d1177d;
+  --ifm-color-primary-darker: #b81470;
+  --ifm-color-primary-darkest: #8f105a;
+  --ifm-color-primary-light: #f472b6;
+  --ifm-color-primary-lighter: #f9a8d4;
+  --ifm-color-primary-lightest: #fce7f3;
+
+  /* Accent Color - Rose Gold */
+  --ifm-color-accent: #ff6bb3;
+
+  /* Background Colors */
+  --ifm-background-color: #fffbfd;
+  --ifm-background-surface-color: #fdf2f8;
+
+  /* Text Colors */
+  --ifm-font-color-base: #4a1942;
+  --ifm-font-color-secondary: #7c3a6b;
+
+  /* Link Colors */
+  --ifm-link-color: #e91e8c;
+  --ifm-link-hover-color: #be185d;
+  --ifm-link-hover-decoration: underline;
+
+  /* Border Colors */
+  --ifm-color-emphasis-200: #fce7f3;
+  --ifm-color-emphasis-300: #fbcfe8;
+
+  /* Code Block */
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(233, 30, 140, 0.1);
+
+  /* Navbar */
+  --ifm-navbar-background-color: #fffbfd;
+  --ifm-navbar-shadow: 0 1px 2px 0 rgba(233, 30, 140, 0.1);
+  --ifm-navbar-height: 60px;
+  --ifm-navbar-padding-vertical: 0.5rem;
+  --ifm-navbar-padding-horizontal: 1rem;
+
+  /* Sidebar */
+  --doc-sidebar-width: 280px;
+  --ifm-menu-color-background-active: rgba(233, 30, 140, 0.1);
+
+  /* Footer */
+  --ifm-footer-background-color: #4a1942;
+  --ifm-footer-color: #fdf2f8;
+  --ifm-footer-link-color: #f9a8d4;
+  --ifm-footer-link-hover-color: #ffffff;
+
+  /* Typography */
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Consolas',
+    'Monaco', monospace;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-font-weight: 600;
+  --ifm-h1-font-size: 2.5rem;
+  --ifm-h2-font-size: 2rem;
+  --ifm-h3-font-size: 1.5rem;
+  --ifm-h4-font-size: 1.25rem;
+  --ifm-h5-font-size: 1rem;
+
+  /* Layout */
+  --ifm-container-width: 1400px;
+  --ifm-container-width-xl: 1400px;
+  --ifm-global-radius: 8px;
+  --ifm-global-spacing: 1rem;
+
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Buttons */
+  --ifm-button-border-radius: 6px;
+  --ifm-button-padding-vertical: 0.5rem;
+  --ifm-button-padding-horizontal: 1rem;
+
+  /* Cards */
+  --ifm-card-border-radius: 12px;
+
+  /* Alerts/Admonitions */
+  --ifm-alert-border-radius: 8px;
+
+  /* Accessibility - Focus indicators */
+  --focus-outline-width: 3px;
+  --focus-outline-offset: 2px;
+  --focus-outline-color: var(--ifm-color-primary);
+}
+
+/* ============================================================
+   DARK MODE - Rose Pink Theme
+   ============================================================ */
+[data-theme='dark'] {
+  /* Primary Colors - Bright Pink */
+  --ifm-color-primary: #f472b6;
+  --ifm-color-primary-dark: #ec4899;
+  --ifm-color-primary-darker: #db2777;
+  --ifm-color-primary-darkest: #be185d;
+  --ifm-color-primary-light: #f9a8d4;
+  --ifm-color-primary-lighter: #fbcfe8;
+  --ifm-color-primary-lightest: #fce7f3;
+
+  /* Accent Color - Hot Pink */
+  --ifm-color-accent: #ff6bb3;
+
+  /* Background Colors */
+  --ifm-background-color: #1f0a1a;
+  --ifm-background-surface-color: #2d1228;
+
+  /* Text Colors */
+  --ifm-font-color-base: #fdf2f8;
+  --ifm-font-color-secondary: #f9a8d4;
+
+  /* Link Colors */
+  --ifm-link-color: #f472b6;
+  --ifm-link-hover-color: #f9a8d4;
+
+  /* Border Colors */
+  --ifm-color-emphasis-200: #4a1942;
+  --ifm-color-emphasis-300: #6b2158;
+
+  /* Code Block */
+  --docusaurus-highlighted-code-line-bg: rgba(244, 114, 182, 0.2);
+
+  /* Navbar */
+  --ifm-navbar-background-color: #2d1228;
+
+  /* Sidebar */
+  --ifm-menu-color-background-active: rgba(244, 114, 182, 0.15);
+
+  /* Footer */
+  --ifm-footer-background-color: #1f0a1a;
+  --ifm-footer-color: #fdf2f8;
+}
+
+/* ============================================================
+   GLOBAL STYLES
+   ============================================================ */
+
+/* Improved focus indicators for accessibility */
+:focus-visible {
+  outline: var(--focus-outline-width) solid var(--focus-outline-color);
+  outline-offset: var(--focus-outline-offset);
+  border-radius: 4px;
+}
+
+/* Remove outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Touch-friendly tap targets */
+button,
+a,
+input,
+select,
+textarea,
+[role='button'] {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Inline links don't need minimum size */
+p a,
+li a,
+td a {
+  min-height: auto;
+  min-width: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Improved heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--ifm-heading-font-weight);
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.75em;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+/* Breadcrumb styling */
+.breadcrumbs {
+  font-size: 0.875rem;
+  padding: var(--spacing-sm) 0;
+}
+
+.breadcrumbs__link {
+  color: var(--ifm-font-color-secondary);
+}
+
+.breadcrumbs__link:hover {
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+}
+
+/* Skip to content link for accessibility */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 1rem;
+  background-color: var(--ifm-color-primary);
+  color: white;
+  text-decoration: none;
+}
+
+.skip-to-content:focus {
+  left: 0;
+  top: 0;
+}
+
+/* ============================================================
+   COMPONENT IMPORTS
+   ============================================================ */
+@import './components/hero.css';
+@import './components/navbar.css';
+@import './components/sidebar.css';
+@import './components/footer.css';
+@import './components/code-block.css';
+@import './components/admonitions.css';

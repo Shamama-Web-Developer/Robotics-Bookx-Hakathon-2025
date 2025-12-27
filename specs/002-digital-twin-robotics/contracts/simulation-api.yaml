@@ -1,0 +1,141 @@
+# API Contracts: Digital Twin Robotics Module
+
+## Interactive Simulation API
+
+### Get Simulation Parameters
+```
+GET /api/simulation/parameters
+```
+
+**Description**: Retrieve available parameters for physics simulation
+
+**Response**:
+```json
+{
+  "gravity": {
+    "value": 9.81,
+    "unit": "m/s^2",
+    "range": {"min": 0, "max": 20, "step": 0.1}
+  },
+  "collisionModel": {
+    "options": ["elastic", "inelastic", "custom"],
+    "default": "elastic"
+  },
+  "environment": {
+    "terrain": ["flat", "hilly", "obstacle-course"],
+    "objects": ["box", "sphere", "cylinder"]
+  }
+}
+```
+
+### Update Simulation Parameters
+```
+PUT /api/simulation/parameters
+```
+
+**Description**: Update physics simulation parameters
+
+**Request**:
+```json
+{
+  "gravity": 9.81,
+  "collisionModel": "elastic",
+  "environment": {
+    "terrain": "flat",
+    "objects": ["box", "sphere"]
+  }
+}
+```
+
+**Response**:
+```json
+{
+  "status": "updated",
+  "timestamp": "2024-12-20T10:00:00Z"
+}
+```
+
+### Get Sensor Simulation Data
+```
+GET /api/sensors/data
+```
+
+**Description**: Retrieve simulated sensor data for educational visualization
+
+**Response**:
+```json
+{
+  "lidar": {
+    "distances": [1.2, 0.8, 1.5, 2.1, 1.8, 1.0, 0.7, 1.3],
+    "resolution": "360deg",
+    "accuracy": "0.01m"
+  },
+  "depthCamera": {
+    "depthMap": "base64_encoded_data",
+    "resolution": "640x480",
+    "fov": 60
+  },
+  "imu": {
+    "orientation": {"x": 0.1, "y": 0.2, "z": 0.3, "w": 0.9},
+    "acceleration": {"x": 0.5, "y": -0.2, "z": 9.8},
+    "gyroscope": {"x": 0.01, "y": -0.02, "z": 0.005}
+  }
+}
+```
+
+### Get Learning Progress
+```
+GET /api/learning/progress
+```
+
+**Description**: Retrieve student progress through the digital twin robotics module
+
+**Response**:
+```json
+{
+  "module": "digital-twin-robotics",
+  "chapters": [
+    {
+      "title": "Physics Simulation",
+      "completed": true,
+      "completionDate": "2024-12-20T09:30:00Z"
+    },
+    {
+      "title": "High-Fidelity Twins",
+      "completed": false,
+      "estimatedTimeRemaining": 45
+    },
+    {
+      "title": "Sensor Simulation",
+      "completed": false,
+      "estimatedTimeRemaining": 60
+    }
+  ],
+  "exercisesCompleted": 3,
+  "totalExercises": 7
+}
+```
+
+### Save Learning Progress
+```
+PUT /api/learning/progress
+```
+
+**Description**: Update student progress through the digital twin robotics module
+
+**Request**:
+```json
+{
+  "chapter": "Physics Simulation",
+  "completed": true,
+  "exercisesCompleted": [1, 2, 3]
+}
+```
+
+**Response**:
+```json
+{
+  "status": "progress saved",
+  "timestamp": "2024-12-20T10:00:00Z"
+}
+```

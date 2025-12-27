@@ -1,0 +1,638 @@
+/* Language Selector Container */
+.languageSelectorContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+/* Urdu Buttons Container */
+.urduButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Special Urdu Button */
+.urduSpecialBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+  animation: urduPulse 2s ease-in-out infinite;
+}
+
+.urduSpecialBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.5);
+}
+
+@keyframes urduPulse {
+  0%, 100% {
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+  }
+  50% {
+    box-shadow: 0 4px 30px rgba(16, 185, 129, 0.6);
+  }
+}
+
+.urduFlag {
+  font-size: 1.25rem;
+}
+
+.urduText {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  direction: rtl;
+}
+
+.urduGlow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Easy Urdu Button - Extra Special with Rainbow Effect */
+.easyUrduBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f59e0b 100%);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow:
+    0 4px 20px rgba(139, 92, 246, 0.4),
+    0 0 30px rgba(236, 72, 153, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  animation: easyUrduPulse 2s ease-in-out infinite, easyUrduFloat 3s ease-in-out infinite;
+}
+
+.easyUrduBtn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow:
+    0 8px 35px rgba(139, 92, 246, 0.5),
+    0 0 50px rgba(236, 72, 153, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+@keyframes easyUrduPulse {
+  0%, 100% {
+    box-shadow:
+      0 4px 20px rgba(139, 92, 246, 0.4),
+      0 0 30px rgba(236, 72, 153, 0.3);
+  }
+  50% {
+    box-shadow:
+      0 4px 30px rgba(139, 92, 246, 0.6),
+      0 0 50px rgba(236, 72, 153, 0.5);
+  }
+}
+
+@keyframes easyUrduFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+.easyUrduIcon {
+  font-size: 1rem;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2);
+  }
+}
+
+.easyUrduFlag {
+  font-size: 1.1rem;
+}
+
+.easyUrduText {
+  font-family: 'Noto Nastaliq Urdu', 'Jameel Noori Nastaleeq', serif;
+  direction: rtl;
+  font-size: 0.9rem;
+}
+
+.easyUrduBadge {
+  padding: 0.15rem 0.4rem;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: badgeBounce 2s ease-in-out infinite;
+}
+
+@keyframes badgeBounce {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.easyUrduGlow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  animation: easyShine 2.5s ease-in-out infinite;
+}
+
+@keyframes easyShine {
+  0% { left: -100%; }
+  50%, 100% { left: 100%; }
+}
+
+/* Main Language Selector */
+.languageSelector {
+  position: relative;
+}
+
+.selectedLanguage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--ifm-background-color);
+  border: 2px solid rgba(244, 114, 182, 0.3);
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(244, 114, 182, 0.2);
+}
+
+.selectedLanguage:hover {
+  border-color: #f472b6;
+  box-shadow: 0 8px 30px rgba(244, 114, 182, 0.3);
+}
+
+.flagEmoji {
+  font-size: 1.25rem;
+}
+
+.langName {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  color: var(--ifm-font-color-secondary);
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  z-index: -1;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  bottom: calc(100% + 0.5rem);
+  right: 0;
+  width: 340px;
+  max-height: 500px;
+  background: var(--ifm-background-color);
+  border: 1px solid rgba(244, 114, 182, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdownHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, rgba(244, 114, 182, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+  border-bottom: 1px solid rgba(244, 114, 182, 0.2);
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+.totalCount {
+  margin-left: auto;
+  font-size: 0.75rem;
+  color: var(--ifm-font-color-secondary);
+  background: rgba(244, 114, 182, 0.15);
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+}
+
+.langCount {
+  font-size: 0.7rem;
+  color: var(--ifm-font-color-secondary);
+  margin-left: 0.25rem;
+}
+
+/* Search Container */
+.searchContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(244, 114, 182, 0.15);
+  background: rgba(244, 114, 182, 0.05);
+}
+
+.searchIcon {
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.9rem;
+  color: var(--ifm-font-color-base);
+}
+
+.searchInput::placeholder {
+  color: var(--ifm-font-color-secondary);
+  opacity: 0.7;
+}
+
+.clearSearch {
+  background: rgba(244, 114, 182, 0.2);
+  border: none;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 0.7rem;
+  color: var(--ifm-font-color-secondary);
+  transition: all 0.2s;
+}
+
+.clearSearch:hover {
+  background: rgba(244, 114, 182, 0.4);
+  color: var(--ifm-font-color-base);
+}
+
+/* Region Groups */
+.regionGroup {
+  margin-bottom: 0.5rem;
+}
+
+.regionHeader {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--ifm-font-color-secondary);
+  background: rgba(244, 114, 182, 0.05);
+  border-bottom: 1px solid rgba(244, 114, 182, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* No Results */
+.noResults {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  color: var(--ifm-font-color-secondary);
+  text-align: center;
+}
+
+.noResults span {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  opacity: 0.5;
+}
+
+.noResults p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.globeIcon {
+  font-size: 1.25rem;
+}
+
+.languageList {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.languageList::-webkit-scrollbar {
+  width: 6px;
+}
+
+.languageList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.languageList::-webkit-scrollbar-thumb {
+  background: rgba(244, 114, 182, 0.3);
+  border-radius: 3px;
+}
+
+.languageList::-webkit-scrollbar-thumb:hover {
+  background: rgba(244, 114, 182, 0.5);
+}
+
+/* Language Option */
+.languageOption {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.languageOption:hover {
+  background: rgba(244, 114, 182, 0.1);
+}
+
+.languageOption.active {
+  background: rgba(244, 114, 182, 0.15);
+}
+
+.languageOption.specialLang {
+  border: 1px dashed rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.languageOption.specialLang:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.optionFlag {
+  font-size: 1.5rem;
+  min-width: 30px;
+  text-align: center;
+}
+
+.optionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.optionName {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  font-size: 0.95rem;
+}
+
+.optionCountry {
+  font-size: 0.8rem;
+  color: var(--ifm-font-color-secondary);
+}
+
+.checkmark {
+  color: #ec4899;
+}
+
+.specialBadge {
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 600;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+/* Easy Mode Badge */
+.easyBadge {
+  padding: 0.2rem 0.5rem;
+  background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 10px;
+  animation: easyBadgePulse 2s ease-in-out infinite;
+}
+
+@keyframes easyBadgePulse {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(139, 92, 246, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.6);
+  }
+}
+
+/* Easy Mode Language Option */
+.easyModeLang {
+  border: 2px dashed rgba(139, 92, 246, 0.5);
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05) 0%, rgba(236, 72, 153, 0.05) 100%);
+}
+
+.easyModeLang:hover {
+  background: linear-gradient(135deg, rgba(139, 92, 246, 0.15) 0%, rgba(236, 72, 153, 0.15) 100%);
+  border-color: rgba(139, 92, 246, 0.7);
+}
+
+/* RTL Support */
+[dir='rtl'] .languageSelectorContainer {
+  right: auto;
+  left: 2rem;
+}
+
+[dir='rtl'] .dropdown {
+  right: auto;
+  left: 0;
+}
+
+[dir='rtl'] .optionInfo {
+  text-align: right;
+}
+
+[dir='rtl'] .languageOption {
+  flex-direction: row-reverse;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .languageSelectorContainer {
+    bottom: 1rem;
+    right: 1rem;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+
+  .urduButtonsContainer {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .urduSpecialBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .easyUrduBtn {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.75rem;
+  }
+
+  .easyUrduBadge {
+    display: none;
+  }
+
+  .dropdown {
+    width: 300px;
+    right: -1rem;
+    max-height: 450px;
+  }
+
+  .languageList {
+    max-height: 320px;
+  }
+
+  [dir='rtl'] .languageSelectorContainer {
+    left: 1rem;
+    align-items: flex-start;
+  }
+
+  [dir='rtl'] .dropdown {
+    left: -1rem;
+    right: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .urduText {
+    display: none;
+  }
+
+  .urduSpecialBtn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    justify-content: center;
+  }
+
+  .easyUrduBtn {
+    padding: 0.5rem 0.75rem;
+    border-radius: 25px;
+  }
+
+  .easyUrduText {
+    display: none;
+  }
+
+  .easyUrduIcon {
+    font-size: 1.2rem;
+  }
+
+  .selectedLanguage {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .langName {
+    display: none;
+  }
+
+  .langCount {
+    display: none;
+  }
+
+  .dropdown {
+    width: calc(100vw - 2rem);
+    max-width: 320px;
+    max-height: 400px;
+  }
+
+  .languageList {
+    max-height: 280px;
+  }
+
+  .regionHeader {
+    font-size: 0.65rem;
+    padding: 0.4rem 0.5rem;
+  }
+
+  .searchContainer {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .searchInput {
+    font-size: 0.85rem;
+  }
+}
